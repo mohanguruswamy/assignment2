@@ -1,0 +1,31 @@
+# Data Import
+Download the Samsung data and load into R:  
+(The download.file statement is commented out to prevent re-downlaoding the large file)  
+The data was downloaded on 27 Feb 2013.
+
+```{r data_import}
+dataFile <- "https://spark-public.s3.amazonaws.com/dataanalysis/samsungData.rda"
+# download.file(dataFile, dest="./data/samsungData.rda", method="curl")
+load("./data/samsungData.rda")
+```
+
+# Early probing
+```{r probe}
+str(samsungData, list.len=999)  # list.len argument to prevent trucation of output
+names(samsungData[1:12])
+table(samsungData$activity)
+table(samsungData$subject)
+```
+It might be a good idea to try to distinguish between stationary and moving activities first
+
+```{r}
+par(mfrow=c(1,2))
+numericActivity <- as.numeric(as.factor(samsungData$activity))[samsungData$subject==1]
+plot(samsungData[samsungData$subject==1,1],pch=19,col=numericActivity,ylab=names(samsungData)[1]) 
+plot(samsungData[samsungData$subject==1,2],pch=19,col=numericActivity,ylab=names(samsungData)[2]) 
+legend(150,-0.1,legend=unique(samsungData$activity),col=unique(numericActivity),pch=19)
+
+par(mfrow=c(1,2)) 
+plot(samsungData[samsungData$subject==1,10],pch=19,col=numericActivity,ylab=names(samsungData)[10]) 
+plot(samsungData[samsungData$subject==1,11],pch=19,col=numericActivity,ylab=names(samsungData)[11])
+```
