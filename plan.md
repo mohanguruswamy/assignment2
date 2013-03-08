@@ -14,9 +14,10 @@ Investigate
 
 Try to find the significant factors
 * Run a classification tree
+    * show a plot and describe the important variables
 * Use svd
-* Use clustering (which variables produce the clearest clusters?)
-* Use random forest?
+* Use random forest
+    * expand rf to encompass validation set
 
 Build a model
 -------------

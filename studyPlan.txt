@@ -1,0 +1,12 @@
+Find the right data
+Define your error rate
+Split data into:
+Training
+Testing
+Validation (optional)
+On the training set pick features
+On the training set pick prediction function
+On the training set cross-validate
+If no validation - apply 1x to test set
+If validation - apply to test set and refine
+If validation - apply 1x to validation
