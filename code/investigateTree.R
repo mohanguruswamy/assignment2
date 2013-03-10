@@ -11,6 +11,12 @@ important.vars <- as.character(tree1$frame$var)
 important.vars <- important.vars[important.vars!="<leaf>"]
 print(important.vars)
 
+# plot a nice tree for the accompanying diagram
+plot(tree1)
+title(main="Classification tree for activity, using all other variables",
+      sub="call: tree(activity ~ .,data=ssdTrain)")
+text(tree1, cex=0.8)
+
 # now apply the model to the validation set
 tree.pred1 <- predict(tree1, ssdVal, type="class")
 summary(tree.pred1)
