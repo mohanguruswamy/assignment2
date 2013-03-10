@@ -9,3 +9,10 @@ ssdTrainVal <- rbind(ssdTrain, ssdVal)
 # train the random forest again
 rf.trainVal <- randomForest(activity ~ ., data=ssdTrainVal)
 print(rf.trainVal)
+
+# now apply the final model to the test set
+rf.pred1 <- predict(rf.trainVal, ssdTestDONOTUSE, type="class")
+print(rf.pred1)
+# calculate the misclassification rate
+rf.misclass <- sum(rf.pred1 != ssdTestDONOTUSE$activity)
+rf.misclass.rate <- rf.misclass / length(ssdTestDONOTUSE$activity) *100

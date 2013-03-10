@@ -8,7 +8,6 @@ Clean and condition the data
 * Describe the number of observations
 * Mention any outliers
 
-
 Investigate
 -----------
 
@@ -16,6 +15,7 @@ Try to find the significant factors
 * Run a classification tree
     * show a plot and describe the important variables
     * include a reference
+    * cross validate
 * Use svd (no time for this)
 * Use random forest
     * expand rf to encompass validation set
@@ -28,8 +28,8 @@ Build a model
 * Decide on error rates (just use misclassification rate)
 * Decide on cross validation strategy (is this within the training data, or can we use validation data?)
 * Find the best model
-* Maybe combine models?
-* Make it into a function
+* Maybe combine models? (no time)
+* Make it into a function (not necessary for assignment)
 
 Diagram ideas
 -------------
