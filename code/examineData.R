@@ -2,7 +2,3 @@
 dim(samsungData)
 # count how many subjects
 length(unique(samsungData$subject))
-plot(samsungData[,1])
-for (i in 2:100) {
-  points(samsungData[,i])
-}

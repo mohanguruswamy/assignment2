@@ -15,10 +15,12 @@ Investigate
 Try to find the significant factors
 * Run a classification tree
     * show a plot and describe the important variables
-* Use svd
+    * include a reference
+* Use svd (no time for this)
 * Use random forest
     * expand rf to encompass validation set
-    * investigate using rfcv for cross validation
+    * include a reference
+    * investigate using rfcv for cross validation (no time for this)
 
 Build a model
 -------------
